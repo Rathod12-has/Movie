@@ -8,6 +8,11 @@
     <title>Devi Sri Delights & Foods</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Global Config -->
+    <script>
+        window.SHOP_WA_NUMBER = "916305469979";
+    </script>
 </head>
 <body>
     
@@ -20,7 +25,7 @@
         <span></span>
         <span></span>
     </button>
-
+    
     <div id="active-order-status" style="display: none;">
         <span class="status-dot"></span> <span id="status-text">Order Placed</span>
     </div>
@@ -35,9 +40,12 @@
     <div class="carousel-hint">Swipe to explore 👉</div>
     <div class="carousel-wrapper">
         <div class="carousel-track">
+            <!-- Order Card -->
             <div class="carousel-card" style="text-align: center;">
                 <div class="bg-shape shape-1"></div><div class="bg-shape shape-2"></div>
                 <div class="bg-shape shape-3"></div><div class="bg-shape shape-4"></div>
+                <div class="bg-shape shape-5"></div><div class="bg-shape shape-6"></div>
+                <div class="bg-shape shape-7"></div><div class="bg-shape shape-8"></div>
                 
                 <div class="card-label-wrapper">
                     <div class="card-label-line"></div>
@@ -65,7 +73,10 @@
                 </a>
             </div>
 
+            <!-- Tracking Card -->
             <div class="carousel-card">
+                <div class="bg-shape shape-1"></div><div class="bg-shape shape-2"></div>
+                <div class="bg-shape shape-3"></div><div class="bg-shape shape-4"></div>
                 <div class="bg-shape shape-5"></div><div class="bg-shape shape-6"></div>
                 <div class="bg-shape shape-7"></div><div class="bg-shape shape-8"></div>
 
@@ -80,8 +91,13 @@
                 </div>
             </div>
 
+            <!-- Special Card -->
             <div class="carousel-card" style="background: linear-gradient(135deg, var(--inner-card-bg), #FFFFFF);">
-                <div class="bg-shape shape-1"></div><div class="bg-shape shape-3"></div>
+                <div class="bg-shape shape-1"></div><div class="bg-shape shape-2"></div>
+                <div class="bg-shape shape-3"></div><div class="bg-shape shape-4"></div>
+                <div class="bg-shape shape-5"></div><div class="bg-shape shape-6"></div>
+                <div class="bg-shape shape-7"></div><div class="bg-shape shape-8"></div>
+
                 <div class="card-label-wrapper">
                     <div class="card-label-line"></div>
                     <div class="card-label-text-wrapper"><span class="card-label-text">SPECIAL</span></div>
@@ -90,12 +106,17 @@
                 <span style="font-size: 2.5rem; margin-bottom: 5px; position: relative; z-index: 2; margin-top: 25px;">🌟</span>
                 <h3 class="card-title" style="color: var(--text-accent); margin-top: 5px !important;">Today's Special</h3>
                 <p style="text-align: center; color: #475569; font-weight: 600; line-height: 1.4; margin: 0; font-size: 0.95rem; position: relative; z-index: 2;">
-                    Special items will be available soon.!.
+                    Special items will be available soon.
                 </p>
             </div>
 
+            <!-- Rewards Card -->
             <div class="carousel-card">
-                <div class="bg-shape shape-2"></div><div class="bg-shape shape-4"></div>
+                <div class="bg-shape shape-1"></div><div class="bg-shape shape-2"></div>
+                <div class="bg-shape shape-3"></div><div class="bg-shape shape-4"></div>
+                <div class="bg-shape shape-5"></div><div class="bg-shape shape-6"></div>
+                <div class="bg-shape shape-7"></div><div class="bg-shape shape-8"></div>
+
                 <div class="card-label-wrapper">
                     <div class="card-label-line"></div>
                     <div class="card-label-text-wrapper"><span class="card-label-text">REWARDS</span></div>
@@ -110,28 +131,34 @@
         </div>
     </div>
 
-    <div class="container" id="menu-container"></div>
+    <!-- Menu Section -->
+    <div class="container" id="menu-container">
+        <p style='text-align:center; padding: 40px; color: var(--text-dark); font-weight: 600;'>Loading delicious menu...</p>
+    </div>
 
+    <!-- Contact & Map Section -->
     <div class="container">
         <div class="shop-info inner-card" style="position: relative; overflow: hidden;">
             <div class="bg-shape shape-5" style="top: 10px; left: -20px; transform: scale(0.8);"></div>
             <div class="bg-shape shape-2" style="bottom: 10px; right: -10px; transform: scale(0.6);"></div>
+            <div class="bg-shape shape-8" style="top: 50%; right: 10%; transform: scale(0.9);"></div>
+            <div class="bg-shape shape-1" style="top: -15px; right: 20%; transform: scale(0.6);"></div>
+            <div class="bg-shape shape-3" style="bottom: 25%; left: 10%; transform: scale(0.7);"></div>
+            <div class="bg-shape shape-6" style="top: 35%; left: 5%; transform: scale(0.5);"></div>
+            <div class="bg-shape shape-4" style="bottom: -10px; left: 45%; transform: scale(0.5);"></div>
+            <div class="bg-shape shape-7" style="top: 15px; right: -10px; transform: scale(0.4);"></div>
+            
             <h3 style="color: var(--text-accent); margin-top: 0; position: relative; z-index: 2;">Contact Us</h3>
             <p style="color: var(--text-dark); font-weight: 600; position: relative; z-index: 2;">Phone / WhatsApp: +91 6305469979</p>
             <div class="app-actions" style="position: relative; z-index: 2;">
                 <button id="install-app-btn" class="action-btn">📲 Download Our App</button>
                 <button id="share-app-btn" class="action-btn" style="background: var(--btn-secondary); margin-top: 10px;">📢 Share App</button>
             </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.2800756662455!2d77.62558797429936!3d17.684224594187757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bceb5036dd004cb%3A0x370dc5a8eac9f14e!2sDevi%20Sri%20Delights%20And%20Foods!5e0!3m2!1sen!2sin!4v1775061036146!5m2!1sen!2sin" width="100%" height="300" style="border:0; border-radius: var(--radius-md); margin-top: 20px; box-shadow: var(--shadow-inner); position: relative; z-index: 2;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
-    <div id="live-order-widget" class="floating-widget" style="display: none;">
-        <div class="drag-handle">≡ Drag</div>
-        <span id="widget-badge" class="live-badge pending-bg">Pending</span>
-        <p style="margin: 5px 0;"><strong id="widget-text">Order sent to kitchen</strong></p>
-        <p style="font-size: 11px; color: #64748B; margin: 0;">Tap to view details</p>
-    </div>
-
+    <!-- Floating Cart -->
     <div id="floating-cart">
         <div class="cart-info">
             <span id="cart-count">0</span> Items | ₹<span id="cart-total">0</span>
@@ -139,14 +166,24 @@
         <button class="checkout-btn" onclick="toggleCartModal()">View Order & Checkout</button>
     </div>
 
+    <!-- MODALS -->
+
+    <!-- Cart Modal -->
     <div id="cart-modal" class="modal-overlay">
         <div class="modal-content">
+            <div class="bg-shape shape-1" style="top: 5%; left: -10px; transform: scale(0.7);"></div>
+            <div class="bg-shape shape-4" style="top: 30%; right: -20px; transform: scale(0.6);"></div>
+            <div class="bg-shape shape-6" style="bottom: 15%; left: 5%; transform: scale(0.5);"></div>
+            <div class="bg-shape shape-8" style="bottom: 5%; right: 15%; transform: scale(0.8);"></div>
+
             <div class="modal-header-flex" style="position: relative; z-index: 2;">
                 <h2>Your Order</h2>
                 <button class="clear-cart-btn" onclick="clearCart()">Clear All</button>
                 <span class="close-btn" onclick="toggleCartModal()">×</span>
             </div>
+            
             <div id="cart-items-list" style="position: relative; z-index: 2;"></div>
+            
             <h3 style="text-align: right; color: var(--text-accent); margin-top: 15px; position: relative; z-index: 2;">Total: ₹<span id="modal-total">0</span></h3>
             <div class="customer-info" style="position: relative; z-index: 2;">
                 <label for="customer-name">Enter your name:</label>
@@ -156,6 +193,7 @@
         </div>
     </div>
 
+    <!-- Login Modal (OTP Flow) -->
     <div id="login-modal" class="modal-hidden">
         <div class="login-modal-content">
             <h2>Welcome!</h2>
@@ -166,25 +204,26 @@
                     <span class="country-code">+91</span>
                     <input type="tel" id="phone-number" class="styled-input-phone" placeholder="Enter 10-digit number" maxlength="10">
                 </div>
-                <button id="send-otp-btn" class="action-btn" onclick="sendOTP()" style="margin-top: 15px;">Send OTP</button>
+                <div id="recaptcha-container" style="margin-top: 10px;"></div>
+                <button id="send-code-btn" class="action-btn" onclick="window.sendOTP()" style="margin-top: 15px;">Send OTP</button>
             </div>
 
             <div id="otp-input-section" style="display: none;">
-                <p style="text-align: center; color: var(--text-dark); margin-bottom: 10px; font-weight: 600;">Enter the 6-digit code sent via SMS</p>
-                <input type="number" id="otp-code" class="styled-input" placeholder="000000" style="text-align: center; letter-spacing: 8px; font-size: 1.4rem; font-weight: bold;">
-                <button id="verify-otp-btn" class="action-btn" onclick="verifyOTP()" style="margin-top: 15px;">Verify & Login</button>
+                <label style="font-size: 0.85rem; font-weight: 700; color: #64748B;">Enter 6-digit code</label>
+                <input type="text" id="otp-code" class="styled-input" placeholder="000000" maxlength="6" style="margin-top: 8px;">
+                <button id="verify-code-btn" class="action-btn" onclick="window.verifyOTP()" style="margin-top: 15px;">Verify & Login</button>
             </div>
 
-            <div id="recaptcha-container"></div>
             <button onclick="document.getElementById('login-modal').classList.remove('show')" class="close-text-btn">Cancel</button>
         </div>
     </div>
 
-    <button id="my-orders-btn" onclick="openOrderHistory()" style="display: none;">📜 My Orders</button>
-    <button id="call-shop-btn" style="display: none;">📞 Call</button>
-
+    <!-- Account Modal -->
     <div id="account-modal" class="modal-hidden">
         <div class="account-modal-content">
+            <div class="bg-shape shape-1"></div><div class="bg-shape shape-4"></div>
+            <div class="bg-shape shape-6"></div><div class="bg-shape shape-8"></div>
+            
             <h2 style="position: relative; z-index: 2;">My Profile</h2>
             <div id="account-details" class="details-text" style="position: relative; z-index: 2; margin-top: 20px;">
                 <p style="text-align: center; color: #888;">Loading your details...</p>
@@ -194,8 +233,12 @@
         </div>
     </div>
     
+    <!-- Order History Modal -->
     <div id="history-modal" class="modal-hidden">
         <div class="history-modal-content">
+            <div class="bg-shape shape-2"></div><div class="bg-shape shape-5"></div>
+            <div class="bg-shape shape-7"></div><div class="bg-shape shape-3"></div>
+
             <h2 style="position: relative; z-index: 2;">Order History</h2>
             <div id="history-list" style="position: relative; z-index: 2;">
                 <p style="color: #888;">Loading your history...</p>
@@ -205,6 +248,7 @@
         </div>
     </div>
 
+    <!-- Specific Order Details Modal -->
     <div id="order-details-modal" class="modal-hidden">
         <div class="modal-content">
             <div class="modal-header-flex">
@@ -216,6 +260,7 @@
         </div>
     </div>
 
+    <!-- Ready Notification Modal -->
     <div id="ready-modal" class="ready-modal-hidden">
         <div class="ready-modal-content">
             <h2>🎉 Order Ready!</h2>
@@ -223,266 +268,19 @@
             <button onclick="document.getElementById('ready-modal').classList.remove('show')" class="action-btn">Awesome, thanks!</button>
         </div>
     </div>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp, doc, onSnapshot, query, where, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
-        import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-messaging.js"; 
-        // NEW: Auth Imports
-        import { getAuth, RecaptchaVerifier, signInWithPhoneNumber, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyC7uuy0yYV3L17RJ0RvbN-mrfqrT4PquMo",
-            authDomain: "devi-sri-delights.firebaseapp.com",
-            projectId: "devi-sri-delights",
-            storageBucket: "devi-sri-delights.firebasestorage.app",
-            messagingSenderId: "73108349440",
-            appId: "1:73108349440:web:8ca038c61c9a85b2b12ee5"
-        };
+    <!-- Floating Action Buttons -->
+    <button id="my-orders-btn" onclick="openOrderHistory()" style="display: none;">
+        📜 My Orders
+    </button>
+    <button id="call-shop-btn" style="display: none;">
+         📞 Call
+    </button>
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const messaging = getMessaging(app);
-        const auth = getAuth(app); // Initialize Auth
-
-        // Menu Loading
-        document.getElementById('menu-container').innerHTML = "<p style='text-align:center; padding: 40px; color: var(--text-dark); font-weight: 600;'>Loading delicious menu...</p>";
-        async function loadCustomerMenu() {
-            const menuRef = collection(db, "menu");
-            const snap = await getDocs(menuRef);
-            let categories = [];
-            snap.forEach(doc => {
-                let cat = doc.data();
-                if (typeof cat.order === 'undefined') cat.order = 999;
-                categories.push(cat);
-            });
-            categories.sort((a, b) => a.order - b.order);
-            if(categories.length > 0) window.renderMenu(categories);
-            else document.getElementById('menu-container').innerHTML = "<p style='text-align:center; padding: 40px; color: #E11D48;'>Menu is currently unavailable.</p>";
-        }
-        loadCustomerMenu();
-
-        window.currentUser = null;
-        window.activeOrderUnsubscribe = null; 
-
-        // ----------------------------------------------------
-        // NEW: Firebase Phone Auth Flow
-        // ----------------------------------------------------
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in securely
-                setLoggedInState(user.phoneNumber);
-            } else {
-                // User is signed out
-                handleLogoutUI();
-            }
-        });
-
-        window.sendOTP = function() {
-            const phoneInput = document.getElementById("phone-number").value.trim();
-            if (phoneInput.length !== 10 || isNaN(phoneInput)) return alert("Please enter a valid 10-digit number.");
-            const formattedPhone = "+91" + phoneInput;
-
-            const btn = document.getElementById('send-otp-btn');
-            btn.innerText = "Sending...";
-            btn.disabled = true;
-
-            if (!window.recaptchaVerifier) {
-                window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-                    'size': 'invisible'
-                });
-            }
-
-            signInWithPhoneNumber(auth, formattedPhone, window.recaptchaVerifier)
-                .then((confirmationResult) => {
-                    window.confirmationResult = confirmationResult;
-                    document.getElementById('phone-input-section').style.display = 'none';
-                    document.getElementById('otp-input-section').style.display = 'block';
-                }).catch((error) => {
-                    console.error("SMS Error:", error);
-                    alert("Error sending SMS. Please try again.");
-                    btn.innerText = "Send OTP";
-                    btn.disabled = false;
-                });
-        };
-
-        window.verifyOTP = function() {
-            const code = document.getElementById("otp-code").value.trim();
-            if (code.length !== 6) return alert("Please enter the 6-digit code.");
-            
-            const btn = document.getElementById('verify-otp-btn');
-            btn.innerText = "Verifying...";
-            btn.disabled = true;
-
-            window.confirmationResult.confirm(code).then((result) => {
-                document.getElementById('login-modal').classList.remove('show');
-                // Reset UI for next time
-                document.getElementById('phone-input-section').style.display = 'block';
-                document.getElementById('otp-input-section').style.display = 'none';
-                btn.innerText = "Verify & Login";
-                btn.disabled = false;
-            }).catch((error) => {
-                alert("Invalid code. Please try again.");
-                btn.innerText = "Verify & Login";
-                btn.disabled = false;
-            });
-        };
-
-        function setLoggedInState(phone) {
-            window.currentUser = { phoneNumber: phone };
-            document.getElementById('login-btn').style.display = 'none'; 
-            document.getElementById('my-account-btn').style.display = 'flex'; 
-            document.getElementById('my-orders-btn').style.display = 'block';
-            trackActiveOrder(phone);
-            updateCarouselAccount(); 
-            
-            if (window.requestPushPermissions) window.requestPushPermissions();
-        }
-
-        window.logoutUser = function() {
-            signOut(auth).catch(error => console.error("Logout error", error));
-        };
-
-        function handleLogoutUI() {
-            window.currentUser = null;
-            document.getElementById('login-btn').style.display = 'block'; 
-            document.getElementById('my-account-btn').style.display = 'none'; 
-            document.getElementById('my-orders-btn').style.display = 'none';
-            if (window.activeOrderUnsubscribe) window.activeOrderUnsubscribe();
-            
-            document.getElementById('carousel-order-content').innerHTML = `<p style="color: #64748B; text-align: center;">No active orders right now.</p>`;
-            document.getElementById('live-order-widget').style.display = 'none';
-            
-            updateCarouselAccount(); 
-            document.getElementById('account-modal').classList.remove('show');
-            document.getElementById('history-modal').classList.remove('show');
-        }
-
-        // ----------------------------------------------------
-        // Order Tracking & Live Widget Updates
-        // ----------------------------------------------------
-        const readySound = new Audio("https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3");
-
-        function trackActiveOrder(phone) {
-            const q = query(collection(db, "orders"), where("customerPhone", "==", phone));
-            let previousStatus = null; 
-
-            window.activeOrderUnsubscribe = onSnapshot(q, (snap) => {
-                let latestOrder = null;
-                let latestTime = 0;
-                snap.forEach(doc => {
-                    let data = doc.data();
-                    let time = data.timestamp ? data.timestamp.toMillis() : Date.now();
-                    if (time > latestTime) { latestTime = time; latestOrder = data; }
-                });
-
-                const carouselOrderContent = document.getElementById('carousel-order-content');
-                const statusTracker = document.getElementById('active-order-status');
-                const statusText = document.getElementById('status-text');
-                const statusDot = document.querySelector('.status-dot');
-                
-                // NEW Widget Elements
-                const liveWidget = document.getElementById('live-order-widget');
-                const widgetBadge = document.getElementById('widget-badge');
-                const widgetText = document.getElementById('widget-text');
-
-                if (latestOrder && latestOrder.status !== "Picked up" && latestOrder.status !== "Completed") {
-                    let status = latestOrder.status || "Pending";
-                    if (status === "Ready" && previousStatus !== "Ready") readySound.play().catch(e => console.log("Blocked"));
-                    previousStatus = status; 
-                    
-                    // --- Update Widget ---
-                    liveWidget.style.display = 'block';
-                    widgetBadge.innerText = status;
-                    
-                    if (status === "Pending") {
-                        widgetBadge.className = "live-badge pending-bg";
-                        widgetText.innerText = `₹${latestOrder.totalBill} - Sent to kitchen`;
-                        statusText.innerText = "Order Placed"; statusDot.className = "status-dot";
-                    } else if (status === "Cooking") {
-                        widgetBadge.className = "live-badge cooking";
-                        widgetText.innerText = "Chef is preparing it!";
-                        statusText.innerText = "Cooking..."; statusDot.className = "status-dot";
-                    } else if (status === "Ready") {
-                        widgetBadge.className = "live-badge ready";
-                        widgetText.innerText = "Come grab it!";
-                        statusText.innerText = "Ready for Pickup!"; statusDot.className = "status-dot ready";
-                    }
-
-                    // --- Update Carousel ---
-                    statusTracker.style.display = 'flex';
-                    let d = new Date(latestOrder.timestamp ? latestOrder.timestamp.toMillis() : Date.now());
-                    let timeStr = d.toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
-                    let dateStr = d.toLocaleString('en-IN', { day: '2-digit', month: 'short' });
-                    let waText = encodeURIComponent(`Hi Devi Sri Delights, I want to check the status of my order for Rs. ${latestOrder.totalBill}. Ordered by: ${latestOrder.customerName}`);
-                    
-                    carouselOrderContent.innerHTML = `
-                        <div style="width: 100%; box-sizing: border-box; text-align: left; background: var(--inner-card-bg); padding: 12px; border-radius: var(--radius-md); border: 1px solid rgba(126, 34, 206, 0.1);">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <strong style="font-size: 1rem; color: var(--text-dark);">${latestOrder.customerName}</strong>
-                                <span class="status-badge-inline ${status === 'Ready' ? 'picked-up-bg' : (status === 'Cooking' ? 'cooking' : 'pending-bg')}">${status}</span>
-                            </div>
-                            <p style="margin: 0 0 5px 0; font-size: 0.85rem; color: #64748B;">📅 ${dateStr} at ${timeStr}</p>
-                            <p style="margin: 0; font-size: 0.95rem; font-weight: 800; color: var(--text-accent);">Total: ₹${latestOrder.totalBill}</p>
-                        </div>
-                    `;
-                } else {
-                    statusTracker.style.display = 'none';
-                    liveWidget.style.display = 'none';
-                    carouselOrderContent.innerHTML = `<p style="color: #64748B; text-align: center;">No active orders right now.</p>`;
-                }
-            });
-        }
-        // ----------------------------------------------------
-        // Live Widget Dragging Logic
-        // ----------------------------------------------------
-        const widget = document.getElementById('live-order-widget');
-        let isDragging = false;
-        let startX, startY, initialX, initialY;
-
-        widget.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            const touch = e.touches[0];
-            startX = touch.clientX;
-            startY = touch.clientY;
-            const rect = widget.getBoundingClientRect();
-            initialX = rect.left;
-            initialY = rect.top;
-        });
-
-        widget.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const touch = e.touches[0];
-            const deltaX = touch.clientX - startX;
-            const deltaY = touch.clientY - startY;
-            
-            widget.style.right = 'auto'; // Remove default right pinning while dragging
-            widget.style.left = `${initialX + deltaX}px`;
-            widget.style.top = `${initialY + deltaY}px`;
-        });
-
-        widget.addEventListener('touchend', () => { isDragging = false; });
-        widget.addEventListener('click', (e) => { if (!isDragging) openOrderHistory(); });
-
-
-        // Remaining Account/History logic remains the same...
-        window.updateCarouselAccount = async function() { /* ... */ };
-        window.saveProfileName = function() { /* ... */ };
-        window.openAccountModal = async function() { /* ... */ };
-        window.openOrderHistory = async function() { /* ... */ };
-        window.renderHistoryChunks = function() { /* ... */ };
-        window.loadMoreOrders = function() { /* ... */ };
-        window.viewSpecificOrder = function(index) { /* ... */ };
-        window.saveOrderToFirebase = async function(name, cart, total) {
-            const phone = window.currentUser ? window.currentUser.phoneNumber : "No Number";
-            localStorage.setItem('customerName', name);
-            const docRef = await addDoc(collection(db, "orders"), {
-                customerName: name, customerPhone: phone, orderItems: cart, totalBill: total, timestamp: serverTimestamp(), status: "Pending"
-            });
-            onSnapshot(doc(db, "orders", docRef.id), (s) => {
-                if (s.exists() && s.data().status === "Ready") document.getElementById('ready-modal').classList.add('show');
-            });
-        };
-    </script>
+    <!-- UI Scripts -->
     <script src="script.js"></script>
+    <!-- Backend Logic -->
+    <script type="module" src="firebase-app.js"></script>
 </body>
-</html>
+    </html>
+    

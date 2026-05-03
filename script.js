@@ -65,7 +65,7 @@ window.renderMenu = function(menuCategories) {
                 itemDiv.style.zIndex = "2";
 
                 let priceDisplay = (item.price === "Shop Visit") ? `<span class="shop-visit-tag">Price at Shop</span>` : `<span class="item-price">₹${item.price}</span>`;
-                let buttonHTML = (item.price === "Shop Visit") ? '' : `<button class="add-btn" onclick="addToCart('${item.name}', ${item.price})">Add</button>`;
+                let buttonHTML = (item.price === "Shop Visit") ? '' : `<button class="add-btn" onclick="window.addToCart('${item.name}', ${item.price})">Add</button>`;
 
                 itemDiv.innerHTML = `<div class="item-info"><h4 style="color: var(--text-dark); margin-bottom: 4px;">${item.name}</h4>${priceDisplay}</div>${buttonHTML}`;
                 itemList.appendChild(itemDiv);
@@ -81,7 +81,7 @@ popSound.volume = 0.5;
 
 window.addToCart = function(itemName, price) {
     cart[itemName] = cart[itemName] ? { ...cart[itemName], quantity: cart[itemName].quantity + 1 } : { price, quantity: 1 };
-    updateCartUI();
+    window.updateCartUI();
     
     popSound.currentTime = 0; 
     popSound.play().catch(err => console.log("Audio blocked by browser until user taps"));
@@ -91,8 +91,8 @@ window.removeFromCart = function(itemName) {
     if (cart[itemName]) {
         cart[itemName].quantity -= 1;
         if (cart[itemName].quantity <= 0) delete cart[itemName];
-        updateCartUI();
-        renderCartModalItems();
+        window.updateCartUI();
+        window.renderCartModalItems();
         
         if (Object.keys(cart).length === 0) {
             document.getElementById('cart-modal').classList.remove('show');
@@ -103,7 +103,7 @@ window.removeFromCart = function(itemName) {
 window.clearCart = function() {
     if (confirm("Are you sure you want to clear your entire order?")) {
         cart = {};
-        updateCartUI();
+        window.updateCartUI();
         document.getElementById('cart-modal').classList.remove('show');
     }
 };
@@ -130,7 +130,7 @@ window.toggleCartModal = function() {
     if (modal.classList.contains('show')) {
         modal.classList.remove('show');
     } else {
-        renderCartModalItems();
+        window.renderCartModalItems();
         modal.classList.add('show');
     }
 };
@@ -150,7 +150,7 @@ window.renderCartModalItems = function() {
                 </div>
                 <div style="text-align: right;">
                     <strong style="display:block; margin-bottom: 5px; color: var(--text-accent);">₹${itemTotal}</strong>
-                    <button class="remove-btn" onclick="removeFromCart('${item}')">Remove</button>
+                    <button class="remove-btn" onclick="window.removeFromCart('${item}')">Remove</button>
                 </div>
             </div>`;
     }
@@ -183,9 +183,10 @@ window.sendWhatsAppOrder = function() {
     alert("✅ Order successfully sent to the kitchen!\n\nPlease wait, your phone will notify you the exact moment it is ready for pickup.");
 
     cart = {};
-    updateCartUI();
+    window.updateCartUI();
 };
 
+// Register Service Worker
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('firebase-messaging-sw.js').catch(err => console.log("SW failed:", err));
 }

@@ -86,55 +86,52 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+
 window.sendOTP = function() {
     const phoneInput = document.getElementById("phone-number").value.trim();
-    if (phoneInput.length !== 10 || isNaN(phoneInput)) return alert("Please enter a valid 10-digit phone number.");
+    if (phoneInput.length !== 10 || isNaN(phoneInput)) {
+        return alert("Please enter a valid 10-digit phone number.");
+    }
     const formattedPhone = "+91" + phoneInput;
 
-    if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', { size: 'invisible' });
+    const btn = document.getElementById('send-code-btn');
+    btn.innerText = "Sending..."; // Give visual feedback
+    btn.disabled = true;
+
+    try {
+        if (!window.recaptchaVerifier) {
+            window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', { 
+                size: 'invisible' 
+            });
+        }
+
+        signInWithPhoneNumber(auth, formattedPhone, window.recaptchaVerifier)
+            .then((confirmationResult) => {
+                window.confirmationResult = confirmationResult;
+                document.getElementById('phone-input-section').style.display = 'none';
+                document.getElementById('otp-input-section').style.display = 'block';
+                btn.innerText = "Send OTP";
+                btn.disabled = false;
+            }).catch((error) => {
+                // THIS WILL SHOW US THE EXACT PROBLEM
+                alert("Firebase Error: " + error.code + "\n" + error.message);
+                console.error("SMS not sent", error);
+                
+                // Reset everything so you can try again
+                btn.innerText = "Send OTP";
+                btn.disabled = false;
+                if (window.recaptchaVerifier) {
+                    window.recaptchaVerifier.clear();
+                    window.recaptchaVerifier = null;
+                }
+            });
+    } catch (err) {
+        alert("Captcha Error: " + err.message);
+        btn.innerText = "Send OTP";
+        btn.disabled = false;
     }
-
-    signInWithPhoneNumber(auth, formattedPhone, window.recaptchaVerifier)
-        .then((confirmationResult) => {
-            window.confirmationResult = confirmationResult;
-            document.getElementById('phone-input-section').style.display = 'none';
-            document.getElementById('otp-input-section').style.display = 'block';
-        })    signInWithPhoneNumber(auth, formattedPhone, window.recaptchaVerifier)
-        .then((confirmationResult) => {
-            window.confirmationResult = confirmationResult;
-            document.getElementById('phone-input-section').style.display = 'none';
-            document.getElementById('otp-input-section').style.display = 'block';
-        }).catch((error) => {
-            // WE CHANGED THE ALERT HERE TO SHOW THE REAL FIREBASE ERROR
-            alert("Firebase Error: " + error.code + " \n" + error.message);
-            console.error("SMS not sent", error);
-        });
-    
 };
-
-window.verifyOTP = function() {
-    const code = document.getElementById('otp-code').value.trim();
-    if(code.length !== 6) return alert("Please enter the 6-digit code.");
-
-    window.confirmationResult.confirm(code).then((result) => {
-        document.getElementById('login-modal').classList.remove('show');
-        document.getElementById('otp-input-section').style.display = 'none';
-        document.getElementById('phone-input-section').style.display = 'block';
-        document.getElementById('phone-number').value = '';
-        document.getElementById('otp-code').value = '';
-    }).catch((error) => {
-        alert("Invalid code. Please try again.");
-    });
-};
-
-window.logoutUser = function() {
-    signOut(auth).then(() => {
-        document.getElementById('account-modal').classList.remove('show');
-        document.getElementById('history-modal').classList.remove('show');
-        window.location.reload();
-    });
-};
+                              
 
 // --- PUSH NOTIFICATIONS ---
 window.requestPushPermissions = async function() {

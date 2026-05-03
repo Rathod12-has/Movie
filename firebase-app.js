@@ -100,10 +100,17 @@ window.sendOTP = function() {
             window.confirmationResult = confirmationResult;
             document.getElementById('phone-input-section').style.display = 'none';
             document.getElementById('otp-input-section').style.display = 'block';
+        })    signInWithPhoneNumber(auth, formattedPhone, window.recaptchaVerifier)
+        .then((confirmationResult) => {
+            window.confirmationResult = confirmationResult;
+            document.getElementById('phone-input-section').style.display = 'none';
+            document.getElementById('otp-input-section').style.display = 'block';
         }).catch((error) => {
+            // WE CHANGED THE ALERT HERE TO SHOW THE REAL FIREBASE ERROR
+            alert("Firebase Error: " + error.code + " \n" + error.message);
             console.error("SMS not sent", error);
-            alert("Error sending OTP. Make sure your domain is whitelisted in Firebase Auth Settings.");
         });
+    
 };
 
 window.verifyOTP = function() {
